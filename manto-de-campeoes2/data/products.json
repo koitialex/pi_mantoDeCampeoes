@@ -1,0 +1,143 @@
+[
+ {
+    "id": "1",
+    "name": "Camisa Corinthians Third",
+    "price": 219.90,
+    "image": "img/Camisa-Corinthians-Third.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "2",
+    "name": "Camisa Flamengo 2023",
+    "price": 199.90,
+    "image": "img/Camisa-Flamengo-2023.png",
+    "category": "Clubes"
+  },
+{
+    "id": "3",
+    "name": "Camisa Vasco da Gama Home",
+    "price": 199.90,
+    "image": "img/Camisa-Vasco-da-Gama-Home.png",
+    "category": "Clubes"
+  },
+{
+    "id": "4",
+    "name": "Camisa São Paulo Retrô",
+    "price": 229.90,
+    "image": "img/Camisa-Sao-Paulo-Retro.png",
+    "category": "Retrô"
+  },
+  {
+    "id": "5",
+    "name": "Camisa Argentina Home",
+    "price": 259.90,
+    "image": "img/Camisa-Argentina-Home.png",
+    "category": "Seleções"
+  },
+{
+    "id": "6",
+    "name": "Camisa Palmeiras Third",
+    "price": 189.90,
+    "image": "img/Camisa-Palmeiras-Third.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "7",
+    "name": "Camisa Real Madrid Home 2024",
+    "price": 289.90,
+    "image": "img/Camisa-Real-Madrid-Home-2024.png",
+    "category": "Clubes Internacionais"
+  },
+
+ {
+    "id": "8",
+    "name": "Camisa Brasil Home",
+    "price": 249.90,
+    "image": "img/Camisa-Brasil-Home.png",
+    "category": "Seleções"
+  },
+  {
+    "id": "9",
+    "name": "Camisa Manchester City Away",
+    "price": 269.90,
+    "image": "img/Camisa-Manchester-City-Away.png",
+    "category": "Clubes Internacionais"
+  },
+    {
+    "id": "3",
+    "name": "Camisa Barcelona Away",
+    "price": 279.90,
+    "image": "img/Camisa-Barcelona-Away.png",
+    "category": "Clubes Internacionais"
+  },
+  {
+    "id": "11",
+    "name": "Camisa Grêmio Home",
+    "price": 199.90,
+    "image": "img/Camisa-Gremio-Home.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "12",
+    "name": "Camisa Internacional Away",
+    "price": 189.90,
+    "image": "img/Camisa-Internacional-Away.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "13",
+    "name": "Camisa Atlético Mineiro Home",
+    "price": 209.90,
+    "image": "img/Camisa-Atletico-Mineiro-Home.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "14",
+    "name": "Camisa Cruzeiro Retrô 1997",
+    "price": 239.90,
+    "image": "img/Camisa-Cruzeiro-Retro.png",
+    "category": "Retrô"
+  },
+  {
+    "id": "15",
+    "name": "Camisa Fluminense Home",
+    "price": 199.90,
+    "image": "img/Camisa-Fluminense-Home.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "16",
+    "name": "Camisa Santos Home",
+    "price": 259.90,
+    "image": "img/Camisa-Santos-Home.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "17",
+    "name": "Camisa Liverpool Third",
+    "price": 279.90,
+    "image": "img/Camisa-Liverpool-Third.png",
+    "category": "Clubes Internacionais"
+  },
+  {
+    "id": "18",
+    "name": "Camisa Botafogo Home",
+    "price": 189.90,
+    "image": "img/Camisa-Botafogo-Home.png",
+    "category": "Clubes"
+  },
+  {
+    "id": "19",
+    "name": "Camisa Holanda Retrô 1988",
+    "price": 249.90,
+    "image": "img/Camisa-Holanda-Retro.png",
+    "category": "Retrô"
+  },
+  {
+    "id": "20",
+    "name": "Camisa Bayern de Munique",
+    "price": 289.90,
+    "image": "img/Camisa-Bayern.png",
+    "category": "Clubes Internacionais"
+  }
+]

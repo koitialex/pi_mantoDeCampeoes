@@ -1,0 +1,636 @@
+
+/*-----------------------------------------------------tela login e register-----------------------------------------------------*/
+
+/* === RESET E GERAIS === */
+body {
+    background-color: rgb(63, 63, 63);
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+select {
+    box-sizing: border-box;
+}
+
+/* === CONTAINERS PRINCIPAIS === */
+/*container da imagem,titulo e formulários de login e registro*/
+.display {
+    margin: 0 auto;
+    width: 75%;
+    height: 100%;
+}
+
+/*container da imagem e formulários de login e registro*/
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    height: 100%;
+}
+
+/*container da imagem */
+.image {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    aspect-ratio: 1;
+    margin-top: 2vh;
+    width: 100%;
+    height: auto;
+}
+
+/*aqui mexe no tamanho da imagem */
+.image img {
+    flex: 1.1;
+    width: 100%;
+    height: 100%;
+    /* define que o contêiner vai ocupar o espaço que o .main permitir */
+    border-radius: 15px;
+}
+
+/*container do titulo da tela de login e registro */
+.bem-vindo {
+    width: 55%;
+}
+
+.bem-vindo h1 {
+    font-weight: bold;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.bem-vindo h2 {
+    margin: 0;
+    font-weight: 100;
+    font-size: 1.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+
+.bem-vindo span {
+    color: yellow;
+}
+
+/* === header === */
+.site-header {
+    background-color: rgb(88, 88, 88);
+    border-bottom: 1px solid var(--border-color);
+    padding: 2rem 0;
+    width: 100%;
+    height: 10vh;
+    
+}
+
+.site-header .container {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 40px; /* Espaçamento entre logo, navegação e ícones */
+    position: relative;
+}
+.logo {
+    max-width: 150px;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 0;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+}
+
+.main-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    color: white;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    right: 0;
+}
+
+.header-actions i {
+    font-size: 1.2rem;
+}
+
+.header {
+    background-color: rgb(88, 88, 88);
+
+}
+
+.logo-img {
+
+    width: auto;
+    height: 100px;
+}
+/*aqui controla o input da barra de pesquisa */
+#searching {
+    border: none;
+    background-color: rgb(88, 88, 88);
+    color: white;
+    border-bottom: 1px solid #ffffff;
+    padding: 10px 35px 10px 10px;
+    outline: none;
+
+}
+
+.search-box {
+    position: relative;
+    display: inline-block;
+    bottom: 8px;
+}
+/*aqui permite colocar o icone da lupa dentro do input de pesquisa*/
+.search-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    cursor: pointer;
+}
+
+/*outros icones ao lado do pesquisar*/
+.fa-heart,
+.fa-user,
+.fa-shopping-cart,
+.fa-right-from-bracket{
+    color: white;
+}
+
+.buttons-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto;
+}
+
+/* === ÁREA DE LOGIN E REGISTRO === */
+.loginRegister {
+    flex: 0.9;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+    height: 98vh;
+}
+
+.loginRegister,
+.login,
+.register {
+    width: 100%;
+}
+
+.login,
+.register {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: transform .4s, opacity .4s .1s;
+}
+
+.login label,
+.register label {
+    color: aliceblue;
+}
+
+.login p,
+.register p {
+    color: aliceblue;
+}
+
+.login h2,
+.register h2 {
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1vh;
+}
+
+.register {
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.register h2 {
+    text-align: center;
+}
+
+.active .login {
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active .register {
+    transform: translate(0);
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.login-grid {
+    padding: 12vh 5vh;
+}
+
+input.erro,
+select.erro {
+  border: 1px solid red !important;
+  background-color: #ffe6e6;
+}
+
+label.erro {
+  color: red !important;
+  font-weight: bold;
+}
+
+/* === FORMULÁRIOS === */
+.input {
+    display: flex;
+    flex-direction: column;
+}
+.select-Escolha, 
+.input input {
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+.register p{
+    margin: 0.5vh;
+    font-weight: 10;
+    font-size: 1em;
+}
+
+.login{
+    
+}
+
+.login fieldset,
+.register fieldset {
+    border-radius: 20px;
+}
+
+.login p,
+.register p {
+    display: flex;
+    justify-content: center;
+}
+
+.login-grid h2 {
+    text-align: center;
+}
+
+.senha-esquecerSenha {
+    display: flex;
+    justify-content: space-between;
+}
+
+.senha-esquecerSenha a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.senha-esquecerSenha a:hover {
+    border-bottom: 1px solid white;
+}
+
+
+
+/* === BOTÕES === */
+.button {
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #0047b2;
+    color: white;
+    cursor: pointer;
+}
+
+.button-register {
+    width: 100%;
+}
+
+.troca {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 15px 0 20px 0;
+}
+
+.troca button {
+    width: 100%;
+}
+
+.buttons-nav input {
+    width: 20%;
+}
+
+/* === SOCIAL MEDIA / EXTRAS === */
+.social_media {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* === FOOTER === */
+
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* altura total da tela */
+}
+
+/* Área principal cresce para empurrar o footer para baixo */
+.main-content {
+    flex: 1;
+}
+
+main,
+.conteudo-principal,
+.pagina {
+    flex: 1;
+}
+
+.site-footer {
+    margin-top: 5vh;
+    background-color: rgb(88, 88, 88);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+}
+
+/*-----------------------------------------------------tela recuperação de senha-----------------------------------------------------*/
+/*rec-senha*/
+
+.grid {
+    margin: 0 auto;
+    width: 25%;
+    height: 50%;
+    margin-top: 20px;
+}
+
+.rec-forms {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rec-grid {
+    flex: 1;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.rec-grid h2 {
+    text-align: center;
+}
+
+.input-rec input {
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+
+.rec-forms label,
+.rec-forms h2 {
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#button-rec,
+#button-reset-rec {
+    color: white;
+    background-color: #0047b2;
+
+}
+
+#btn-Nova {
+    background-color: #0047b2;
+}
+
+#btn-reset-Nova {
+    background-color: #0047b2;
+}
+
+/*-----------------------------------------------------tela nova senha-----------------------------------------------------*/
+/*rec-senha*/
+.novaSenha {
+    margin: 0 auto;
+    width: 25%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.nova-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.nova-fieldset {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.nova-form input {
+    width: 100%;
+    height: 3vh;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.novaSenha label,
+.novaSenha h2 {
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.novaSenha h2 {
+    text-align: center;
+}
+
+
+/*-----------------------------------------------------tela home----------------------------------------------------*/
+
+/*outro css*/
+/* --- GERAL --- */
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f2f2f2;
+    --text-color: #333;
+    --background-color: #ffffff;
+    --border-color: #eaeaea;
+}
+
+body {
+
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color); */
+}
+
+.container {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* --- HERO SECTION --- */
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* --- PRODUCT GRID & CARD --- */
+.featured-products h2,
+.page-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.product-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info,
+.product-footer {
+    padding: 1rem;
+}
+
+.product-category {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+}
+
+.product-info h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.product-price {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.product-footer {
+    border-top: 1px solid var(--border-color);
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.add-to-cart-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* --- CATALOG PAGE --- */
+.catalog {
+    display: flex;
+    gap: 2rem;
+}
+
+.filters {
+    width: 200px;
+    flex-shrink: 0;
+}
+
+.product-grid-container {
+    flex-grow: 1;
+}
+
